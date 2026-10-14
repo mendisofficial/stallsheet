@@ -1,0 +1,112 @@
+:root {
+  color-scheme: light;
+  --paper: #f4efe4;
+  --ink: #241c16;
+  --stamp: #8d3428;
+  --pine: #23483d;
+  --line: #d9cbb6;
+  --card: #fffaf2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.top, main {
+  width: min(880px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.top { padding: 2.5rem 0 1rem; }
+
+.mark {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stamp);
+  font-size: 0.78rem;
+  margin: 0;
+}
+
+h1 {
+  font-family: Palatino, "Iowan Old Style", Georgia, serif;
+  font-size: 3.2rem;
+  line-height: 0.95;
+  margin: 0.2rem 0;
+}
+
+.lede { max-width: 38rem; }
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem 1.1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+label, .file {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+  margin-bottom: 0.8rem;
+}
+
+input, select, textarea, button {
+  font: inherit;
+  color: inherit;
+}
+
+input, select, textarea {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  background: white;
+}
+
+button, .file {
+  background: var(--pine);
+  color: white;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+}
+
+.file input { display: none; }
+
+.row { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+
+.hint, .status { color: #5c5148; font-size: 0.9rem; }
+
+.hidden { display: none; }
+
+table { width: 100%; border-collapse: collapse; }
+
+th, td { text-align: left; padding: 0.4rem 0.3rem; border-bottom: 1px solid var(--line); }
+
+td input { width: 6.5rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.6rem; padding: 0; list-style: none; }
+
+.tags li {
+  border: 2px dashed var(--stamp);
+  border-radius: 12px;
+  padding: 0.7rem 0.8rem;
+  min-width: 9rem;
+}
+
+.tags strong { display: block; font-family: Palatino, Georgia, serif; font-size: 1.2rem; }
+
+pre {
+  white-space: pre-wrap;
+  background: #241c16;
+  color: #f4efe4;
+  border-radius: 12px;
+  padding: 0.8rem;
+}

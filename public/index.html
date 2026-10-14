@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StallSheet</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <p class="mark">Sunday desk</p>
+      <h1>StallSheet</h1>
+      <p class="lede">
+        A prep list and price tags for a weekend stall. The forecast sets the numbers.
+        The writing model only turns them into words.
+      </p>
+    </header>
+
+    <main>
+      <section class="panel" id="setup">
+        <h2>1. Sales history</h2>
+        <p id="history-status">Checking the bakery demo…</p>
+        <div class="row">
+          <button type="button" id="load-demo">Reload bakery demo</button>
+          <label class="file">
+            Upload CSV
+            <input id="csv-file" type="file" accept=".csv,text/csv" />
+          </label>
+        </div>
+        <p class="hint">Columns: weekend, item, price, qty_made, qty_sold, weather, notes.</p>
+      </section>
+
+      <form class="panel" id="desk">
+        <h2>2. This weekend</h2>
+        <label>
+          City
+          <input id="city" name="city" value="Portland" required />
+        </label>
+        <label>
+          Market date
+          <input id="weekend" name="weekend" type="date" required />
+        </label>
+        <label>
+          Weather
+          <select id="weather" name="weather">
+            <option value="sunny">Sunny</option>
+            <option value="cloudy">Cloudy</option>
+            <option value="rain">Rain</option>
+          </select>
+        </label>
+        <label>
+          Constraint
+          <textarea id="constraint" name="constraint" rows="3" placeholder="I only have enough butter for 18 cinnamon buns"></textarea>
+        </label>
+        <label class="file">
+          Or dictate it
+          <input id="audio" type="file" accept="audio/*" />
+        </label>
+        <button type="submit" id="build">Build the sheet</button>
+        <p class="status" id="status" role="status"></p>
+      </form>
+
+      <section class="panel hidden" id="confirm-panel">
+        <h2>3. Confirm what you can make</h2>
+        <p id="predict-note"></p>
+        <form id="confirm-form"></form>
+      </section>
+
+      <section class="panel hidden" id="sheet-panel">
+        <h2>4. Your sheet</h2>
+        <article id="sheet"></article>
+        <h3>Run trace</h3>
+        <pre id="trace"></pre>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

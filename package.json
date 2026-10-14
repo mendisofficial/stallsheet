@@ -1,0 +1,31 @@
+{
+  "name": "stallsheet",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "test": "tsx --test src/**/*.test.ts",
+    "db:up": "docker compose up -d"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.5",
+    "@mastra/core": "1.77.0",
+    "@mastra/libsql": "1.26.1",
+    "@sentry/node": "^11.7.0",
+    "dotenv": "^18.0.7",
+    "hono": "^4.13.13",
+    "pg": "^8.23.1",
+    "tsx": "^4.23.15",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/pg": "^8.23.1",
+    "typescript": "^7.0.2"
+  }
+}
